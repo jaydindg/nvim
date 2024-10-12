@@ -40,8 +40,14 @@ lspconfig.rust_analyzer.setup {
   },
 }
 
+lspconfig.tailwindcss.setup {
+  on_attach = function(client, bufnr)
+    require('tailwindcss-bolors').buf_attach(bufnr)
+  end,
+}
+
 -- EXAMPLE
-local servers = { "html", "cssls", "ts_ls", "marksman", "jsonls", "rust_analyzer", "omnisharp" }
+local servers = { "html", "cssls", "ts_ls", "marksman", "jsonls", "rust_analyzer", "omnisharp", "tailwindcss" }
 
 -- lsps with default config
 for _, lsp in ipairs(servers) do

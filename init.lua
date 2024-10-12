@@ -11,6 +11,8 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
+vim.opt.shell = "/bin/zsh"
+
 local lazy_config = require "configs.lazy"
 
 -- load plugins
