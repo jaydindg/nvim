@@ -40,3 +40,11 @@ map(
   '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>',
   { desc = "Search on current file" }
 )
+
+
+-- Neogit keybindings
+map("n", "<leader>gs", '<cmd>lua require("neogit").open()<CR>', { desc = "Neogit Status" })
+map("n", "<leader>gc", '<cmd>lua require("neogit").open({ "commit" })<CR>', { desc = "Neogit Commit" })
+map("n", "<leader>gp", '<cmd>lua require("neogit").open({ "push" })<CR>', { desc = "Neogit Push" })
+map("n", "<leader>gl", '<cmd>lua require("neogit").open({ "log" })<CR>', { desc = "Neogit Log" })
+map("n", "<leader>gd", '<cmd>lua require("neogit").open({ "diff" })<CR>', { desc = "Neogit Diff" })
