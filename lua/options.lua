@@ -9,3 +9,7 @@ require "nvchad.options"
 vim.opt.relativenumber = true
 vim.opt.wrap = true
 vim.opt.textwidth = 80
+
+-- Customize Neogit highlight groups
+vim.cmd('highlight NeogitStatus guifg=#00ff00 guibg=#000000')
+vim.cmd('highlight NeogitCommitView guifg=#ff0000 guibg=#000000')
