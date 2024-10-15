@@ -48,3 +48,5 @@ map("n", "<leader>gc", '<cmd>lua require("neogit").open({ "commit" })<CR>', { de
 map("n", "<leader>gp", '<cmd>lua require("neogit").open({ "push" })<CR>', { desc = "Neogit Push" })
 map("n", "<leader>gl", '<cmd>lua require("neogit").open({ "log" })<CR>', { desc = "Neogit Log" })
 map("n", "<leader>gd", '<cmd>lua require("neogit").open({ "diff" })<CR>', { desc = "Neogit Diff" })
+
+map("n", "<leader>cb", '<cmd>bufdo bdelete<CR>', { desc = "Close All Buffers" })
