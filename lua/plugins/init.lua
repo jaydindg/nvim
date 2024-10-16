@@ -128,8 +128,9 @@ return {
       -- "echasnovski/mini.pick",       -- optional
     },
     config = function()
-      require('neogit').setup {}
-    end
+      require("neogit").setup()
+      dofile(vim.g.base46_cache .. "git")
+      dofile(vim.g.base46_cache .. "neogit")
+    end,
   }
-
 }
