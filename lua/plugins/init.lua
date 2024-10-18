@@ -132,5 +132,23 @@ return {
       dofile(vim.g.base46_cache .. "git")
       dofile(vim.g.base46_cache .. "neogit")
     end,
+  },
+  {
+    'JoosepAlviste/nvim-ts-context-commentstring',
+    requires = 'nvim-treesitter/nvim-treesitter',
+    config = function()
+      require 'nvim-treesitter.configs'.setup {
+        context_commentstring = {
+          enable = true,
+          enable_autocmd = false,
+        }
+      }
+    end
+  },
+  {
+    "folke/ts-comments.nvim",
+    opts = {},
+    event = "VeryLazy",
+    enabled = vim.fn.has("nvim-0.10.0") == 1,
   }
 }
