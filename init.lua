@@ -12,6 +12,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 vim.opt.shell = "/bin/zsh"
+-- vim.opt.breakindent = true
+-- vim.opt.textwidth = 25
 
 local lazy_config = require "configs.lazy"
 
