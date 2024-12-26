@@ -42,3 +42,4 @@ end)
 
 vim.api.nvim_set_hl(0, 'NeogitDiffAddHighlight', { ctermfg = 2, fg = '#00ff00' })
 vim.api.nvim_set_hl(0, 'NeogitDiffDeleteHighlight', { ctermfg = 1, fg = '#ff0000' })
+vim.wo.conceallevel = 2

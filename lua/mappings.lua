@@ -41,7 +41,9 @@ map(
   { desc = "Search on current file" }
 )
 
-
+-- Toggle line number
+map("n", "<leader>tn", '<cmd>set nu!<CR>', { desc = "toggle line number", noremap = true })
+vim.keymap.del("n", "<leader>n")
 -- Neogit keybindings
 map("n", "<leader>gs", '<cmd>lua require("neogit").open()<CR>', { desc = "Neogit Status" })
 map("n", "<leader>gc", '<cmd>lua require("neogit").open({ "commit" })<CR>', { desc = "Neogit Commit" })
@@ -50,3 +52,6 @@ map("n", "<leader>gl", '<cmd>lua require("neogit").open({ "log" })<CR>', { desc 
 map("n", "<leader>gd", '<cmd>lua require("neogit").open({ "diff" })<CR>', { desc = "Neogit Diff" })
 
 map("n", "<leader>cb", '<cmd>bufdo bdelete<CR>', { desc = "Close All Buffers" })
+
+-- Neorg keybinds
+map("n", "<leader>ni", '<cmd>Neorg index<CR>', { desc = "Neorg Workspace Index" })

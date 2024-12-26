@@ -13,7 +13,7 @@ M.base46 = {
   -- },
   hl_override = {
     -- NeogitHunkHeader = { fg = "#F9F295" },
-  }
+  },
 }
 
 return M

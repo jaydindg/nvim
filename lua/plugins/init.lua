@@ -150,5 +150,33 @@ return {
     opts = {},
     event = "VeryLazy",
     enabled = vim.fn.has("nvim-0.10.0") == 1,
-  }
+  },
+  {
+    "nvim-neorg/neorg",
+    lazy = false,  -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
+    version = "*", -- Pin Neorg to the latest stable release
+    dependencies = { "nvim-lua/plenary.nvim" },
+    config = function()
+      require('neorg').setup {
+        load = {
+          ["core.defaults"] = {},
+          ["core.concealer"] = {},
+          ["core.integrations.treesitter"] = {
+            configure_parsers = true,
+            install_parsers = true
+          },
+          ["core.summary"] = {},
+          ["core.dirman"] = {
+            config = {
+              workspaces = {
+                notes = "~/Notes",
+                business = "~/Business/GLOBAL_NOTES"
+              }
+            }
+          }
+        }
+      }
+    end
+  },
+  { "vim-pandoc/vim-pandoc-syntax", config = function() vim.g.vim_markdown_conceal_code_blocks = 0 end, }
 }
