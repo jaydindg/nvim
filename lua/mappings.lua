@@ -47,9 +47,11 @@ vim.keymap.del("n", "<leader>n")
 -- Neogit keybindings
 map("n", "<leader>gs", '<cmd>lua require("neogit").open()<CR>', { desc = "Neogit Status" })
 map("n", "<leader>gc", '<cmd>lua require("neogit").open({ "commit" })<CR>', { desc = "Neogit Commit" })
-map("n", "<leader>gp", '<cmd>lua require("neogit").open({ "push" })<CR>', { desc = "Neogit Push" })
+map("n", "<leader>gP", '<cmd>lua require("neogit").open({ "push" })<CR>', { desc = "Neogit Push" })
+map("n", "<leader>gp", '<cmd>lua require("neogit").open({ "pull" })<CR>', { desc = "Neogit pull" })
 map("n", "<leader>gl", '<cmd>lua require("neogit").open({ "log" })<CR>', { desc = "Neogit Log" })
 map("n", "<leader>gd", '<cmd>lua require("neogit").open({ "diff" })<CR>', { desc = "Neogit Diff" })
+map("n", "<leader>gb", '<cmd>lua require("neogit").open({ "branch" })<CR>', { desc = "Neogit Branch" })
 
 map("n", "<leader>cb", '<cmd>bufdo bdelete<CR>', { desc = "Close All Buffers" })
 
