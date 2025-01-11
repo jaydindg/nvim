@@ -169,8 +169,8 @@ return {
           ["core.dirman"] = {
             config = {
               workspaces = {
-                notes = "~/Notes",
-                business = "~/Business/GLOBAL_NOTES"
+                notes = "~/Documents/Notes",
+                business = "~/Business"
               }
             }
           }
