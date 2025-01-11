@@ -7,8 +7,6 @@ local map = vim.keymap.set
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
 
--- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
-
 -- MY CUSTOM KEY MAPPINGS
 
 map("n", "<leader>pf", "<cmd>Telescope find_files<cr>", { desc = "Telescope Find Files" })
@@ -20,12 +18,7 @@ map("v", "J", ":m '>+1<CR>gv=gv")
 map("v", "K", ":m '<-2<CR>gv=gv")
 map("i", "jj", "<Esc>", { noremap = true, silent = true })
 map("i", "JJ", "<Esc>", { noremap = true, silent = true })
--- map("n", "<leader>wv", ":vsp<CR>", { noremap = true, silent = true })
--- map("n", "<leader>wh", ":split<CR>", { noremap = true, silent = true })
--- map("n", "<leader>wx", ":close<CR>", { noremap = true, silent = true })
 map("n", "H", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-
--- map("n", "<leader>fc", ":%s//g<Left><Left>", { noremap = true, silent = true, desc = "Replace Word in File" })
 
 map("n", "<leader>st", "<cmd> lua require('spectre').toggle()<CR>", { desc = "Spectre Toggle", noremap = true })
 map(
@@ -44,6 +37,7 @@ map(
 -- Toggle line number
 map("n", "<leader>tn", '<cmd>set nu!<CR>', { desc = "toggle line number", noremap = true })
 vim.keymap.del("n", "<leader>n")
+
 -- Neogit keybindings
 map("n", "<leader>gs", '<cmd>lua require("neogit").open()<CR>', { desc = "Neogit Status" })
 map("n", "<leader>gc", '<cmd>lua require("neogit").open({ "commit" })<CR>', { desc = "Neogit Commit" })
@@ -57,3 +51,18 @@ map("n", "<leader>cb", '<cmd>bufdo bdelete<CR>', { desc = "Close All Buffers" })
 
 -- Neorg keybinds
 map("n", "<leader>ni", '<cmd>Neorg index<CR>', { desc = "Neorg Workspace Index" })
+
+-- While in a .norg file
+-- zc: Close (collapse) a fold.
+--
+-- zo: Open (expand) a fold.
+--
+-- za: Toggle a fold open or closed.
+--
+-- zr: Reduce fold level (open more folds).
+--
+-- zm: Increase fold level (close more folds).
+--
+-- zM: Close all folds.
+--
+-- zR: Open all folds.
