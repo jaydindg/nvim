@@ -47,10 +47,32 @@ map("n", "<leader>gl", '<cmd>lua require("neogit").open({ "log" })<CR>', { desc 
 map("n", "<leader>gd", '<cmd>lua require("neogit").open({ "diff" })<CR>', { desc = "Neogit Diff" })
 map("n", "<leader>gb", '<cmd>lua require("neogit").open({ "branch" })<CR>', { desc = "Neogit Branch" })
 
-map("n", "<leader>cb", '<cmd>bufdo bdelete<CR>', { desc = "Close All Buffers" })
+
+
+vim.keymap.set('n', '<leader>cb', function()
+  -- Close all other buffers except the current one
+  local current_buffer = vim.api.nvim_get_current_buf()
+  local all_buffers = vim.api.nvim_list_bufs()
+
+  for _, buf in ipairs(all_buffers) do
+    if buf ~= current_buffer then
+      vim.api.nvim_buf_delete(buf, { force = true })
+    end
+  end
+end, { desc = 'Close All Buffers' })
+
+
 
 -- Neorg keybinds
 map("n", "<leader>ni", '<cmd>Neorg index<CR>', { desc = "Neorg Workspace Index" })
+
+-- Indent selected text in visual mode with Tab
+map('v', '<Tab>', '>gv', { desc = "Indent selected text in Visual mode" })
+
+-- Unindent selected text in visual mode with Shift+Tab
+map('v', '<S-Tab>', '<gv', { desc = "Unindent selected text in Visual mode" })
+
+
 
 -- While in a .norg file
 -- zc: Close (collapse) a fold.

@@ -46,8 +46,14 @@ lspconfig.tailwindcss.setup {
   end,
 }
 
+lspconfig.pyright.setup({
+  on_attach = nvlsp.on_attach,
+  capabilities = nvlsp.capabilities,
+  filetypes = { "python" }
+})
+
 -- EXAMPLE
-local servers = { "html", "cssls", "ts_ls", "marksman", "jsonls", "rust_analyzer", "omnisharp", "tailwindcss" }
+local servers = { "html", "pyright", "cssls", "ts_ls", "marksman", "jsonls", "rust_analyzer", "omnisharp", "tailwindcss" }
 
 -- lsps with default config
 for _, lsp in ipairs(servers) do

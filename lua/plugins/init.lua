@@ -8,6 +8,42 @@ return {
     "themaxmarchuk/tailwindcss-colors.nvim"
   },
   {
+    "rcarriga/nvim-notify",
+    config = function()
+      require("notify").setup({
+        background_colour = "NotifyBackground",
+        fps = 30,
+        -- default icons
+        icons = {
+          DEBUG = "",
+          ERROR = "",
+          INFO = "",
+          TRACE = "✎",
+          WARN = ""
+        },
+        --
+        --  custom icons
+        -- icons = {
+        --   ERROR = "❌",
+        --   WARN = "⚠️",
+        --   INFO = "ℹ️",
+        --   DEBUG = "🐞",
+        --   TRACE = "🔍",
+        -- },
+        level = 2,
+        minimum_width = 50,
+        render = "compact",
+        stages = "fade_in_slide_out",
+        time_formats = {
+          notification = "%T",
+          notification_history = "%FT%T"
+        },
+        timeout = 2000,
+        top_down = true
+      })
+    end
+  },
+  {
     "folke/noice.nvim",
     event = "VeryLazy",
     opts = {
@@ -36,10 +72,7 @@ return {
     dependencies = {
       -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
       "MunifTanjim/nui.nvim",
-      -- OPTIONAL:
-      --   `nvim-notify` is only needed, if you want to use the notification view.
-      --   If not available, we use `mini` as the fallback
-      "rcarriga/nvim-notify",
+      "rcarriga/nvim-notify"
     }
   },
   -- These are some examples, uncomment them if you want to see them work!
@@ -178,5 +211,21 @@ return {
       }
     end
   },
-  { "vim-pandoc/vim-pandoc-syntax", config = function() vim.g.vim_markdown_conceal_code_blocks = 0 end, }
+  { "vim-pandoc/vim-pandoc-syntax", config = function() vim.g.vim_markdown_conceal_code_blocks = 0 end, },
+  {
+    'neoclide/coc.nvim',
+    branch = 'release',
+    run = 'yarn install --frozen-lockfile',
+    config = function()
+      vim.api.nvim_command('source ~/.config/nvim/coc-config.vim')
+    end
+  },
+  {
+    "williamboman/mason.nvim",
+    opts = {
+      ensure_installed = {
+        "pyright"
+      }
+    }
+  },
 }
